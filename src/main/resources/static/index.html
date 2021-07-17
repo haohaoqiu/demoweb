@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+</head>
+<body>
+<h1>首页</h1>
+<div>
+    <button onclick="getTest()">访问后台</button>
+    <p id="testMsg"></p>
+</div>
+<script>
+    $(document).ready(function () {
+    })
+    function getTest() {
+        $.get("/test", function (data, status) {
+            console.log('data', data, 'status', status)
+            $("#testMsg").text(data)
+        })
+    }
+</script>
+</body>
+</html>
